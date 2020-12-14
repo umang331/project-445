@@ -9,13 +9,13 @@ function preload(){
   npc = loadImage("gunman1.png");
   deadManimg = loadImage("npc.png");
   backGround = loadImage("background.png");
-  obs1 = loadImage("../images/obstacle1.png");
-  obs3 = loadImage("../images/obstacle3.png");
-  obs4 = loadImage("../images/obstacle4  .png");
-  obs4_1 = loadImage("../images/obstacle41.png");
-  obs4_2 = loadImage("../images/obstacle42.png");
-  obs4_3 = loadImage("../images/obstacle43.png");
-  bulleti = loadImage("bullet.png");
+  obs1 = loadImage("obstacle1.png");
+  obs3 = loadImage("obstacle3.png");
+  obs4 = loadImage("obstacle4  .png");
+  obs4_1 = loadImage("obstacle41.png");
+  obs4_2 = loadImage("obstacle42.png");
+  obs4_3 = loadImage("obstacle43.png");
+  
   bulletGroup = new Group();
   
 }
