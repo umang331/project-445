@@ -9,12 +9,12 @@ function preload(){
   npc = loadImage("gunman1.png");
   deadManimg = loadImage("npc.png");
   backGround = loadImage("background.png");
- /* obs1 = loadImage("../images/obstacle1.png");
+  obs1 = loadImage("../images/obstacle1.png");
   obs3 = loadImage("../images/obstacle3.png");
   obs4 = loadImage("../images/obstacle4  .png");
   obs4_1 = loadImage("../images/obstacle41.png");
   obs4_2 = loadImage("../images/obstacle42.png");
-  obs4_3 = loadImage("../images/obstacle43.png");*/
+  obs4_3 = loadImage("../images/obstacle43.png");
   bulleti = loadImage("bullet.png");
   bulletGroup = new Group();
   
@@ -43,19 +43,19 @@ function setup() {
  edge4 =  createSprite(2090,600,20,1700);
  edge4.visible = false;
 
- /*obstacle2 =  createSprite(-204,-84,20,20);
+ obstacle2 =  createSprite(-204,-84,20,20);
  obstacle2.addImage(obs4_1);
  obstacle3 =  createSprite(1930,1320,20,20);
  obstacle3.addImage(obs4_3);
  obstacle4 =  createSprite(-204,1320 ,20,20);
  obstacle4.addImage(obs4);
  obstacle5 =  createSprite(1966,-84,20,20);
- obstacle5.addImage(obs4_2);*/
+ obstacle5.addImage(obs4_2);
 
 
  player.debug = true;
 
-createZombie(1400,0,-200);
+
  
  
 }
@@ -70,13 +70,7 @@ function draw() {
   console.log(player.y);
 
 
-    for(var i = 0;i<zomb.length;i++){
-      if(zomb[i].isTouching(bulletGroup)){
-        zomb[i].destroy();
-        bulletGroup.destroyEach();
-        score++;
-      }
-    }
+    
 
   if(keyWentDown(LEFT_ARROW)){
     player.velocityX = -6
@@ -102,9 +96,7 @@ function draw() {
   if(keyWentUp(DOWN_ARROW)){
     player.velocityY = 0
   }
-  if (keyWentDown("space")) {
-    createBullet();
-  }
+ 
 
   player.collide(edge1);
   player.collide(edge2)
@@ -120,27 +112,4 @@ function draw() {
   text("score: " +score,20,20) 
   
 }
-function createBullet() {
-  bullet= createSprite(100, 100, 60, 10);
-  bullet.setCollider("rectangle",0,0,220,100 );
-  bullet.velocityX = -4;
-  bullet.addImage(bulleti);
-  bullet.x = player.x+40;
-  bullet.y=player.y + 24;
-  bullet.lifetime = 150;
-  bullet.scale = 0.1;
-  bulletGroup.add(bullet);
-  return bullet;
-   
-}
-function createZombie(no,a,b){
-  for(var i = a;i<no;i+=70){
-    for(var j = b;j<no;j+=70){
-      zombie = createSprite(i,j,10,10);
-      zombie.addImage(deadManimg);
-      zombie.scale = 0.2
-      zomb.push(zombie);
-      
-    }
-  }
-}
+
